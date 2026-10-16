@@ -40,6 +40,7 @@ body {
     width: 0;
     height: 100%;
     background-color: var(--color-primary);
+    box-shadow: 0 0 40px 0px rgb(51, 133, 255);
 }
 
 .top-container {
@@ -93,7 +94,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 6rem;
+    margin-top: 8rem;
     margin-bottom: 2rem;
     width: 100%;
 }
@@ -239,57 +240,6 @@ h3 {
 .type-id-highlight {
     color: #F0F2F5;
     font-size: 1.8rem;
-}
-
-@media (max-width: 1120px) {
-    .item {
-        width: 85%;
-        padding: 0 1rem;
-        border: 0;
-    }
-
-    .profile-status {
-        margin: 5rem auto 2rem;
-        --portrait-width: min(20vw, 11rem);
-        --portrait-half-width: min(10vw, 5.5rem);
-    }
-
-    .profile-status__message {
-        padding: 0.75rem 1rem;
-        font-size: clamp(0.9rem, 4vw, 1.25rem);
-        left: calc(45% + var(--portrait-half-width) - 1rem);
-    }
-
-    h1 {
-        margin-right: 0;
-        margin-left: 0;
-        font-size: clamp(2.5rem, 10vw, 4rem);
-    }
-
-    .subheader {
-        margin-right: 0;
-        margin-left: 0;
-    }
-}
-
-@media (max-width:736px) {
-    .item {
-        width: 85%;
-        padding: 0 1rem;
-        border: 0;
-    }
-
-    .profile-status {
-        margin-top: 5rem;
-        --portrait-width: min(40%, 10rem);
-        --portrait-half-width: min(20%, 5rem);
-    }
-
-    .profile-status__message {
-        padding: 0.5rem 1rem;
-        font-size: clamp(0.75rem, 4vw, 1rem);
-        left: calc(45% + var(--portrait-half-width) - 1.5rem);
-    }
 }
 
 .buttons {
@@ -579,9 +529,9 @@ header {
 }
 
 .header-container {
-    width: 100%;
+    width: 75vw;
     max-width: 1280px;
-    padding: 0 0.6rem;
+    padding: 0 0.8rem;
     margin: 0;
     background-color: var(--color-background);
     border-left: 1px solid var(--color-stroke);
@@ -599,24 +549,206 @@ nav {
     display: flex;
     color: var(--color-paragraph);
     width: 100%;
-    margin: 0.5rem 0;
     gap: 0.6rem;
-    width: 100%;
-}
-
-.menu ul {
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0rem;
 }
 
 .menu li {
     list-style: none;
     border: 1px solid var(--color-stroke);
-    padding: 1rem 2rem;
+    padding: 0;
     font-family: Reddit Mono;
-    flex: 1;
+    font-size: 1rem;
+    font-weight: 700;
     text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.menu li:hover, .menu a:hover {
+    background-color: var(--color-white);
+    color: var(--color-background);
 }
 
 .menu li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
     text-decoration: none;
+    padding: 0.75rem 1rem;
+}
+
+.mobile-menu-toggle {
+    display: none;
+}
+
+.nav-contact-item {
+    color: var(--color-white);
+    padding: 0;
+    font-family: Reddit Mono;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    list-style: none;
+}
+
+.nav-contact {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+}
+
+.nav-contact a {
+    color: var(--color-white);
+}
+
+@media (max-width: 1100px) {
+
+    .header-container {
+        width: 100%;
+    }
+
+    .item {
+        width: 95%;
+        padding: 0 1rem;
+        border: 0;
+    }
+
+    .category-item {
+        width: 95%;
+    }
+
+    .column-container {
+        width: 95%;
+    }
+
+    .profile-status {
+        margin: 10rem auto 2rem;
+        --portrait-width: min(20vw, 11rem);
+        --portrait-half-width: min(10vw, 5.5rem);
+    }
+
+    .profile-status__message {
+        padding: 0.75rem 1rem;
+        font-size: clamp(0.9rem, 4vw, 1.25rem);
+        left: calc(45% + var(--portrait-half-width) - 1rem);
+    }
+
+    h1 {
+        margin-right: 0;
+        margin-left: 0;
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+
+    .subheader {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .menu li {
+        border: none;
+    }
+}
+
+@media (max-width:830px) {
+
+    .buttons {
+        max-width: 90%;
+    }
+
+    .subheader {
+        font-size: 1.75rem;
+        line-height: 3rem;
+    }
+
+    .item {
+        width: 85%;
+        padding: 0 1rem;
+        border: 0;
+    }
+
+    .profile-status {
+        margin-top: 10rem;
+        --portrait-width: min(40%, 10rem);
+        --portrait-half-width: min(20%, 5rem);
+    }
+
+    .profile-status__message {
+        padding: 0.5rem 1rem;
+        font-size: clamp(0.75rem, 4vw, 1rem);
+        left: calc(45% + var(--portrait-half-width) - 1.5rem);
+    }
+
+    .header-container {
+        width: 100%;
+        position: relative;
+    }
+
+    .category-item {
+        width: 100%;
+    }
+
+    .column-container {
+        width: 100%;
+    }
+
+    .footer {
+        width: 100%;
+    }
+
+    nav {
+        justify-content: flex-end;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        margin: 0;
+        padding: 0.5rem 0;
+        background-color: var(--color-background);
+        border: 1px solid var(--color-stroke);
+    }
+
+    .menu-is-open {
+        display: flex;
+    }
+
+    .menu li {
+        flex: none;
+        text-align: left;
+    }
+
+    .menu li a {
+        justify-content: flex-start;
+        padding: 1rem;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        border: 1px solid var(--color-stroke);
+        background: transparent;
+        cursor: pointer;
+        margin: 0.5rem 0 0.5rem 0;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        width: 20px;
+        height: 20px;
+}
 
 }

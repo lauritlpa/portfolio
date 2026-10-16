@@ -11,11 +11,22 @@
 <header>
     <div class="header-container">
         <nav>
-            <ul class="menu">
-                <li><a href="#3d"></a>3D Graphics</li>
-                <li><a href="#ui"></a>UI Design</li>
-                <li><a href="#graphics"></a> Graphic Design</li>
-                <li><a href="#photography"></a>Photography</li>
+            <button
+                class="mobile-menu-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-controls="site-menu"
+                aria-expanded="false"
+            >
+                <img src="menu.svg" alt="" class="mobile-menu-icon">
+            </button>
+            <ul class="menu" id="site-menu">
+                <li><a href="#top-container">About</a></li>
+                <li><a href="#3d">3D&nbsp;Graphics</a></li>
+                <li><a href="#ui">UI&nbsp;Design</a></li>
+                <li><a href="#graphics">Graphic&nbsp;Design</a></li>
+                <li><a href="#photography">Photography</a></li>
+                <li><a class="nav-contact" href="">Contact&nbsp;Me</a></li>
             </ul>
         </nav>
     </div>
@@ -228,6 +239,48 @@
 <script>
     const progressBar = document.querySelector(".reading-progress");
     const progressFill = document.querySelector(".reading-progress__fill");
+
+    // Haetaan hamburger-painike ja avattava valikko HTML:stä.
+    const menuToggle = document.querySelector(".mobile-menu-toggle");
+    const menu = document.querySelector("#site-menu");
+
+    // Sulkee valikon ja päivittää painikkeen saavutettavuustiedot.
+    function closeMenu() {
+        menu.classList.remove("menu-is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open menu");
+    }
+
+    // Klikkaus vaihtaa valikon auki- ja kiinni-tilan.
+    menuToggle.addEventListener("click", () => {
+        const isOpen = menu.classList.toggle("menu-is-open");
+
+        // Kerrotaan ruudunlukijalle, onko valikko auki.
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close menu" : "Open menu"
+        );
+    });
+
+    // Valikon linkin valitseminen sulkee valikon.
+    menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+    });
+
+    // Escape-näppäin sulkee valikon, jos se on auki.
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeMenu();
+        }
+    });
+
+    // Jos siirrytään työpöytäleveyteen, tyhjennetään mobiilin auki-tila.
+    window.matchMedia("(min-width: 737px)").addEventListener("change", (event) => {
+        if (event.matches) {
+            closeMenu();
+        }
+    });
 
     function updateReadingProgress() {
         const scrollableHeight =
