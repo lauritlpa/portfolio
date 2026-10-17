@@ -277,11 +277,75 @@
     });
 
     // Jos siirrytään työpöytäleveyteen, tyhjennetään mobiilin auki-tila.
-    window.matchMedia("(min-width: 737px)").addEventListener("change", (event) => {
+    window.matchMedia("(min-width: 830px)").addEventListener("change", (event) => {
         if (event.matches) {
             closeMenu();
         }
     });
+
+    /*
+        Step 1: Grab the elements we need to work with from the DOM (the web page).
+        document.querySelector finds the very first element that matches the CSS selector you give it.
+    */
+    const header = document.querySelector('header');
+    const topContainer = document.querySelector('#top-container');
+
+    /*
+        Step 2: Safety first! Always check if the elements actually exist.
+        If this script runs on a page that doesn't have a #top-container, topContainer will be 'null'.
+        Wrapping our logic in this 'if' statement prevents annoying "Cannot read properties of null" errors.
+    */
+    if (header && topContainer) {
+
+    /*
+        Step 3: Set up the Intersection Observer.
+        Think of the IntersectionObserver as a highly efficient sensor that watches an element.
+        Older websites used `window.addEventListener('scroll', ...)`, which runs calculations
+        dozens of times a second as you scroll—causing lag. The Observer only runs your code
+        EXACTLY when the element enters or leaves the screen. It's much better for performance.
+    */
+    const observer = new IntersectionObserver((entries) => {
+
+        // The observer can watch multiple elements at once, so it hands us an array called 'entries'.
+        // Even though we are only watching one element, we still need to loop through the array.
+        entries.forEach(entry => {
+
+        /*
+            'entry.isIntersecting' is a boolean (true or false).
+            - true: The element is currently visible on the screen (even just 1 pixel of it).
+            - false: The element has completely left the screen.
+        */
+        if (!entry.isIntersecting) {
+            // The top container is GONE. The user scrolled completely past it.
+            // We add the CSS class that triggers the CSS transition we wrote earlier.
+            header.classList.add('is-visible');
+        } else {
+            // The top container is BACK on screen. The user scrolled back up.
+            // We remove the class, and the CSS transition smoothly hides the header again.
+            header.classList.remove('is-visible');
+        }
+
+        });
+    }, {
+        /*
+        Options object for the observer.
+        'threshold' dictates how much of the element needs to be visible to trigger the code.
+        threshold: 0 means "trigger the exact millisecond 0% of the target is visible" (when it completely leaves).
+        If we set it to 1, it would trigger when 100% of the target is visible.
+        */
+        threshold: 0
+    });
+
+    /*
+        Step 4: Tell our observer which element to actually point its "sensor" at.
+        We configured the observer above, but without this line, it just sits there doing nothing.
+    */
+    observer.observe(topContainer);
+
+    } else {
+    // A helpful fallback message for the console in case the HTML gets changed later.
+    console.log("Could not initialize header observer: Header or #top-container is missing.");
+    }
 
     function updateReadingProgress() {
         const scrollableHeight =

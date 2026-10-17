@@ -293,6 +293,8 @@ h3 {
 
 .small-row-btns {
     display: flex;
+    width: fit-content;
+    margin-inline: auto;
     flex-wrap: wrap;
     font-family: Reddit Mono;
     font-size: 1rem;
@@ -300,13 +302,14 @@ h3 {
     flex-direction: row;
     align-items: center;
     margin-bottom: 2rem;
+    border: 1px solid var(--color-stroke);
 }
 
 .link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    border: 1px solid #3C3F42;
+    border-right: 1px solid #3C3F42;
     padding: 0.5rem 0.75rem 0.5rem 0.75rem;
     align-items: center;
     color: #7D8389;
@@ -314,10 +317,13 @@ h3 {
     text-decoration: none;
 }
 
+.link:last-child {
+    border-right: none;
+}
+
 .link:hover {
-    background-color: #3C3F42;
+    background-color: var(--color-stroke);
     color: #F0F2F5;
-    border: 1px solid #3C3F42;
 }
 
 .link-icon {
@@ -327,11 +333,7 @@ h3 {
     flex-shrink: 0;
 }
 
-.small-row-btns > .link:first-child {
-    border-right: none;
-}
-
-.small-row-btns > .link:last-child {
+.link:last-child {
     border-left: none;
 }
 
@@ -526,6 +528,40 @@ header {
     flex-direction: column;
     align-items: center;
     /*border-bottom: 4px solid var(--color-stroke);*/
+
+
+      /* Moves the header completely outside the top of the browser window.
+     -100% means it moves up by its exact height. */
+  transform: translateY(-100%);
+
+  /* Makes the header completely transparent (invisible) */
+  opacity: 0;
+
+  /* Prevents the invisible header from blocking clicks on elements beneath it
+     (like links or text at the very top of the page) */
+  pointer-events: none;
+
+  /* The "Fancy" Transition:
+     1. transform: Moves smoothly over 0.5 seconds.
+        'cubic-bezier(0.4, 0, 0.2, 1)' is a custom easing curve that starts a bit
+        fast and smoothly decelerates (often called "ease-out").
+     2. opacity: Fades in/out over 0.5 seconds using standard 'ease' timing. */
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.5s ease;
+}
+
+/* =========================================
+   HEADER VISIBLE STATE (Triggered by JS)
+   ========================================= */
+header.is-visible {
+  /* Brings the header back down to its original, normal position */
+  transform: translateY(0);
+
+  /* Makes the header fully opaque (visible) */
+  opacity: 1;
+
+  /* Re-enables clicking on the header's navigation links */
+  pointer-events: auto;
 }
 
 .header-container {
@@ -534,8 +570,6 @@ header {
     padding: 0 0.8rem;
     margin: 0;
     background-color: var(--color-background);
-    border-left: 1px solid var(--color-stroke);
-    border-right: 1px solid var(--color-stroke);
 }
 
 nav {
@@ -658,11 +692,11 @@ nav {
 @media (max-width:830px) {
 
     .buttons {
-        max-width: 90%;
+        max-width: 100%;
     }
 
     .subheader {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         line-height: 3rem;
     }
 
@@ -687,6 +721,26 @@ nav {
     .header-container {
         width: 100%;
         position: relative;
+    }
+
+    .small-row-btns {
+        flex-direction: column;
+        width: 100%;
+        border: 1px solid var(--color-stroke);
+        margin-bottom: 2.5rem;
+    }
+
+    .small-row-btns > .link  {
+        width: 100%;
+        justify-content: center;
+        border-right: none;
+        border-bottom: 1px solid var(--color-stroke);
+    }
+
+    .small-row-btns > .link:last-child  {
+        width: 100%;
+        justify-content: center;
+        border: none;
     }
 
     .category-item {
