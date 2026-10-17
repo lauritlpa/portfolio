@@ -304,7 +304,8 @@ h3 {
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
     border: 1px solid var(--color-stroke);
 }
 
@@ -568,7 +569,7 @@ header.is-visible {
 .header-container {
     width: 75vw;
     max-width: 1280px;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
     margin: 0;
     background-color: var(--color-background);
     border-left: 1px solid var(--color-stroke);
@@ -594,8 +595,6 @@ nav {
 
 .menu li {
     list-style: none;
-    border: 1px solid var(--color-stroke);
-    padding: 0;
     font-family: Reddit Mono;
     font-size: 1rem;
     font-weight: 700;
@@ -613,7 +612,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-white);
     text-decoration: none;
     padding: 0.75rem 1rem;
 }
@@ -622,26 +620,24 @@ nav {
     display: none;
 }
 
-.nav-contact-item {
+.nav-link {
     color: var(--color-white);
-    padding: 0;
-    font-family: Reddit Mono;
-    font-weight: 600;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    list-style: none;
+    border: 1px solid var(--color-stroke);
 }
 
-.menu li a.nav-contact {
+.nav-link:hover {
+    border: 1px solid var(--color-greywhite);
+}
+
+.nav-contact {
     background-color: var(--color-primary);
     color: var(--color-background);
-    text-decoration: none;
+    border: 1px solid var(--color-primary);
 }
 
-.menu li a.nav-contact:hover {
-    background-color: var(--color-greywhite);
-    color: var(--color-background);
+.nav-contact:hover {
+    color: var(--color-greywhite);
+    border: 1px solid var(--color-greywhite);
 }
 
 @media (max-width: 1100px) {
@@ -797,6 +793,10 @@ nav {
 
     nav {
         justify-content: flex-end;
+    }
+
+    .nav-link {
+        border: 1px solid var(--color-background);
     }
 
     .menu {
