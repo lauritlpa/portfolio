@@ -17,6 +17,96 @@ html {
     scroll-behavior: smooth;
 }
 
+/* reddit-mono-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Reddit Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/reddit-mono-v5-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* reddit-mono-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Reddit Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./fonts/reddit-mono-v5-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* reddit-mono-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Reddit Mono';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./fonts/reddit-mono-v5-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* reddit-mono-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Reddit Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/reddit-mono-v5-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* reddit-mono-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Reddit Mono';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./fonts/reddit-mono-v5-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* dm-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/dm-sans-v17-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* dm-sans-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./fonts/dm-sans-v17-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* dm-sans-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./fonts/dm-sans-v17-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* dm-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/dm-sans-v17-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* dm-sans-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./fonts/dm-sans-v17-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
 body, h1, h2, p, ul, li {
   margin: 0;
   padding: 0;
@@ -78,7 +168,7 @@ body {
 }
 
 .subheader {
-    font-family: DM Sans;
+    font-family: 'DM Sans';
     font-size: 1.25rem;
     font-weight: 500;
     margin-left: 4rem;
@@ -125,7 +215,7 @@ body {
     border-radius: 999px;
     background-color: var(--color-primary);
     color: #F0F2F5;
-    font-family: "DM Sans", sans-serif;
+    font-family: "'DM Sans'", sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.5;
@@ -147,7 +237,7 @@ p {
 }
 
 h1 {
-    font-family: Reddit Mono;
+    font-family: 'Reddit Mono';
     color: var(--color-white);
     font-size: 4rem;
     font-weight: 700;
@@ -173,26 +263,33 @@ h1 {
 }
 
 h2 {
-    font-family: Reddit Mono;
+    font-family: 'Reddit Mono';
     color: var(--color-white);
 }
 
 h3 {
-    font-family: Reddit Mono;
+    display: flex;
+    align-items: center;
+    font-family: 'Reddit Mono';
     color: #F0F2F5;
     font-size: 1.5rem;
     font-weight: 600;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    margin-left: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    margin-left: 0rem;
     margin-right: 1rem;
+    text-transform: uppercase;
 }
 
 .type-id-small {
-    font-family: Reddit Mono;
-    color: hsla(210, 5%, 51%, 0.5);
-    font-size: 1.5rem;
+    font-family: 'Reddit Mono';
+    background-color: var(--color-stroke);
+    color: var(--color-background);
+    font-size: 1rem;
+    text-transform: uppercase;
     font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    margin-right: 1rem;
 }
 
 .type-item {
@@ -211,7 +308,7 @@ h3 {
     align-items: center;
     display: inline-flex;
     flex: 9;
-    font-family: Reddit Mono;
+    font-family: 'Reddit Mono';
     color: #F0F2F5;
     gap: 1rem;
     margin-top: 2rem;
@@ -233,7 +330,7 @@ h3 {
 .type-id {
     justify-content: space-between;
     font-size: 1.5rem;
-    font-family: Reddit Mono;
+    font-family: 'Reddit Mono';
     color: hsla(210, 5%, 51%, 0.5);
     text-align: right;
     margin-top: 1rem;
@@ -246,7 +343,7 @@ h3 {
 }
 
 .buttons {
-    font-family: Reddit Mono;
+    font-family: 'Reddit Mono';
     font-size: 1.25rem;
     font-weight: 600;
     display: flex;
@@ -299,7 +396,7 @@ h3 {
     width: fit-content;
     margin-inline: auto;
     flex-wrap: wrap;
-    font-family: Reddit Mono;
+    font-family: 'Reddit Mono';
     font-size: 1rem;
     justify-content: center;
     flex-direction: row;
@@ -368,7 +465,7 @@ h3 {
 
 .stripe {
     width: 100%;
-    height: 10px;
+    height: 1rem;
     background-image: url("64x64_stripes.svg");
     background-size: 64px 64px; /* tiilen koko */
     background-repeat: repeat;
@@ -377,6 +474,11 @@ h3 {
 }
 
 .stripe_height02 {
+    height: auto;
+    padding: 1rem 0;
+}
+
+.stripe_height03 {
     height: auto;
     padding: 2rem 0;
 }
@@ -388,7 +490,7 @@ h3 {
     text-align: center;
     width: fit-content;
     margin-inline: auto;
-    font-family: Reddit Mono;
+    font-family: 'Reddit Mono';
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -409,19 +511,44 @@ h3 {
     margin-inline: auto;
 }
 
+.borders-top-bottom {
+    border-top: 1px solid #3C3F42;
+    border-bottom: 1px solid #3C3F42;
+}
+
+.centered-stripes {
+    width: 75%;
+    max-width: 1280px;
+    height: 0.5rem;
+    margin-inline: auto;
+    background-image: url("64x64_stripes.svg");
+    background-size: 64px 64px;
+    background-repeat: repeat;
+    border-width: 0px 1px 0px 1px;
+    border-style: solid;
+    border-color: var(--color-stroke);
+}
+
 .work {
     display: flex;
     flex-direction: column;
-    padding: 16px 16px 0 16px;
+    padding: 0px 32px 50px 32px;
     box-sizing: border-box;
+    border-top: 6px solid var(--color-stroke);
     border-left: 1px solid var(--color-stroke);
     border-right: 1px solid var(--color-stroke);
     border-bottom: 1px solid var(--color-stroke);
 }
 
-.column-container > .work:last-child {
-    /* viimeisen .work -elementin säännöt */
-    border-bottom: none;
+.work-description {
+    font-family: 'DM Sans';
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-left: 3rem;
+    margin-right: 4rem;
+    color: #7D8389;
+    margin-bottom: 1.5rem;
+    line-height: 2rem;
 }
 
 .work img {
@@ -436,6 +563,8 @@ h3 {
     display: block;
     width: 100%;
     cursor: zoom-in;
+    position: relative;
+    margin-bottom: 2rem;
 }
 
 .work-thumbnail-link:focus-visible {
@@ -443,10 +572,30 @@ h3 {
     outline-offset: 4px;
 }
 
+.column-container > .work:last-child {
+    /* viimeisen .work -elementin säännöt */
+    border-bottom: none;
+}
+
+[id="3d"], #ui, #graphics, #photography {
+    scroll-margin-top: 8rem;
+}
+
+.image-count {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.4rem 0.7rem;
+    color: var(--color-white);
+    background-color: color-mix(in srgb, var(--color-background) 75%, transparent);
+    font-family: 'Reddit Mono', sans-serif;
+    font-weight: 600;
+}
+
 .header-btn {
     background-color: var(--color-paragraph);
     color: var(--color-background);
-    font-family: Reddit Mono;
+    font-family: 'Reddit Mono';
     font-size: 1.25rem;
     font-weight: 600;
     display: flex;
@@ -482,7 +631,7 @@ h3 {
     cursor: pointer;
     text-decoration: none;
     margin: 2rem 0rem;
-    font-family: Reddit Mono;
+    font-family: 'Reddit Mono';
     font-size: 1rem;
     font-weight: 600;
 }
@@ -510,7 +659,7 @@ h3 {
 }
 
 .small-note {
-    font-family: Reddit Mono;
+    font-family: 'Reddit Mono';
     font-size: 0.875rem;
     font-weight: 400;
     color: #7D8389;
@@ -595,7 +744,7 @@ nav {
 
 .menu li {
     list-style: none;
-    font-family: Reddit Mono;
+    font-family: 'Reddit Mono';
     font-size: 1rem;
     font-weight: 700;
     text-align: center;
