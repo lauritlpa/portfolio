@@ -259,6 +259,8 @@ h1 {
     margin-left: 4rem;
     margin-right: 4rem;
     letter-spacing: -0.02em;
+    display: block;
+    line-height: 1;
 }
 
 .white_highlight {
@@ -889,23 +891,28 @@ nav {
     }
 
     .item {
-        width: 95%;
+        width: 90%;
         padding: 0 1rem;
         border: 0;
     }
 
     .category-item {
-        width: 95%;
+        width: 90%;
     }
 
     .column-container {
-        width: 95%;
+        width: 90%;
+    }
+
+    .centered-stripes {
+        width: 90%;
     }
 
     .profile-status {
         margin: 10rem auto 2rem;
         --portrait-width: min(20vw, 11rem);
         --portrait-half-width: min(10vw, 5.5rem);
+        width: 95%;
     }
 
     .profile-status__message {
@@ -921,12 +928,17 @@ nav {
     }
 
     .subheader {
-        margin-right: 0;
-        margin-left: 0;
+        margin-inline: auto;
+        width: 90%;
+        text-align: center;
     }
 
     .menu li {
         border: none;
+    }
+
+    .footer {
+        width: 90%;
     }
 }
 
@@ -1000,11 +1012,11 @@ nav {
     }
 
     .type-header {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
 
     .type-id-highlight {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .type-id {
@@ -1022,8 +1034,8 @@ nav {
     }
 
     h3 {
-        font-size: 1.125rem;
-        line-height: 1.75rem;
+        font-size: 1.25rem;
+        line-height: 2rem;
         width: 100%;
     }
 
