@@ -387,8 +387,8 @@ h3 {
 
 .contact:hover {
     background-color: var(--color-white);
+    min-height: 60px;
     color: #121416;
-    border: 1px solid var(--color-white);
     text-decoration: none;
     box-shadow: 0 0 40px 0px rgba(47, 122, 238, 0.25);
 }
