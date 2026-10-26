@@ -900,21 +900,25 @@ nav {
     }
 
     .item {
-        width: 90%;
+        width: 100%;
         padding: 0 1rem;
         border: 0;
     }
 
     .category-item {
-        width: 90%;
+        width: 100%;
+        border-left: none;
+        border-right: none;
     }
 
     .column-container {
-        width: 90%;
+        width: 100%;
     }
 
     .centered-stripes {
-        width: 90%;
+        width: 100%;
+        border-left: none;
+        border-right: none;
     }
 
     .profile-status {
@@ -947,7 +951,11 @@ nav {
     }
 
     .footer {
-        width: 90%;
+        width: 100%;
+    }
+
+    .footer-bottom {
+        width: 100%;
     }
 }
 
@@ -979,7 +987,7 @@ nav {
     }
 
     .item {
-        width: 85%;
+        width: 100%;
         padding: 0 1rem;
         border: 0;
     }
@@ -1056,8 +1064,7 @@ nav {
     h3 {
         font-size: 1.25rem;
         line-height: 2rem;
-        width: 100%;
-        margin: 2rem 2rem 1rem 2rem;
+        margin: 2rem 2rem 0.5rem;
     }
 
     .work {
@@ -1094,6 +1101,10 @@ nav {
     }
 
     .footer {
+        width: 100%;
+    }
+
+    .footer-bottom {
         width: 100%;
     }
 
